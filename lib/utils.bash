@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for each.
-GH_REPO="https://github.com/jaydorsey/each"
+GH_REPO="https://github.com/jaydorsey/asdf-each"
 TOOL_NAME="each"
 TOOL_TEST="each --help"
 
@@ -61,7 +61,7 @@ install_version() {
     mkdir -p "$install_path"
     cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
-    # TODO: Asert each executable exists.
+    # TODO: Assert each executable exists.
     local tool_cmd
     tool_cmd="$(echo "$TOOL_TEST" | cut -d' ' -f1)"
     test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."

@@ -5,45 +5,33 @@
 
 [each](https://github.com/jaydorsey/asdf-each) plugin for the [asdf version manager](https://asdf-vm.com).
 
+Run the same command across multiple plugin versions.
+
 </div>
 
 # Contents
 
-- [Dependencies](#dependencies)
 - [Install](#install)
-- [Why?](#why)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-
-# Dependencies
-
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
 
 # Install
 
 Plugin:
 
 ```shell
-asdf plugin add each
-# or
 asdf plugin add each https://github.com/jaydorsey/asdf-each.git
 ```
 
-each:
+# Usage
 
 ```shell
-# Show all installable versions
-asdf list-all each
+# Update ruby gems for all ruby versions
+asdf each ruby gem update --system
 
-# Install specific version
-asdf install each latest
-
-# Set a version globally (on your ~/.tool-versions file)
-asdf global each latest
-
-# Now each commands are available
-each --help
+# Upgrade npm for all nodejs versions
+asdf each nodejs npm install -g npm
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
