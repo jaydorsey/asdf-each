@@ -3,9 +3,6 @@
 each_command() {
   local plugin_name=$1
   shift
-  local each_args=("$@")
-
-  local each_cmd="${each_args[*]}"
 
   check_if_plugin_exists "$plugin_name"
 
@@ -26,7 +23,7 @@ each_command() {
       #   export ASDF_RUBY_VERSION=3.0.3
       #   asdf exec gem update --system
       export $version_env_var="$version"
-      asdf exec $each_cmd
+      asdf exec "$@"
     done
   else
     display_error '  No versions installed'
